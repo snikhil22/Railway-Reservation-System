@@ -1,0 +1,24 @@
+zuul:
+  #Service will be mapped under the /api URI
+  prefix: /api-gateway
+  routes:
+    user-service:
+      path: /user/**
+      url: http://localhost:8085
+    admin-service:
+      path: /admin/**
+      url: http://localhost:8086
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    fetchRegistry: true
+    registerWithEureka: false
+  instance:
+    hostname: localhost
+
+
+
+

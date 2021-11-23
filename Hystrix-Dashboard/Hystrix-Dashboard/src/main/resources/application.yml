@@ -1,0 +1,26 @@
+server:
+  port: 9091
+  
+spring:
+   application:
+     name: Hystrix-Dashboard
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+  servicre-url:
+    defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+    
+hystrix:
+  dashboard:
+    proxy-stream-allow-list: "*"
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      base-path: /
